@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Jumpstart</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #fff8f0;
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 10%;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      color: #ff6f3c;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ff6f3c;
+    }
+
+    .chat-btn {
+      background: #ff6f3c;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .chat-btn:hover {
+      background: #ff3b1a;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #ff6f3c;
+    }
+
+    /* Mobile Navbar */
+    @media (max-width: 768px) {
+      header {
+        flex-wrap: wrap;
+      }
+
+      .menu-toggle {
+        display: block;
+        order: 2;
+      }
+
+      nav {
+        display: none;
+        width: 100%;
+        order: 3;
+      }
+
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        border-radius: 10px;
+        padding: 10px 0;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+        text-align: center;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      .chat-btn {
+        order: 4;
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    /* Main content */
+    main {
+      max-width: 900px;
+      margin: 50px auto 60px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    main h1 {
+      color: #ff6f3c;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    main p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    /* Footer */
+    footer {
+      background: #222;
+      color: #bbb;
+      padding: 50px 10%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    footer h3 {
+      color: #ff6f3c;
+      margin-bottom: 15px;
+    }
+
+    footer a {
+      color: #bbb;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: #ff6f3c;
+    }
+
+    @media (max-width: 768px) {
+      footer div {
+        width: 100%;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <header>
+    <h1>Jumpstart</h1>
+
+    <button class="menu-toggle">&#9776;</button>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <a href="chat.html" class="chat-btn">AI Chef Chat</a>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <h1>About Jumpstart</h1>
+    <p>Welcome to Jumpstart, your ultimate destination for AI-powered meal recommendations, curated menus, and delicious dining experiences delivered straight to your door.</p>
+
+    <p>Our mission is to make mealtime simple, personalized, and delightful. We combine technology with the art of cooking to bring fresh, high-quality meals to you wherever you are.</p>
+
+    <p>Whether you're looking for healthy options, chef specials, or family-friendly meals, Jumpstart has something to satisfy every craving.</p>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <h3>Jumpstart</h3>
+      <p>Bringing delightful flavors and AI-powered taste experiences to your table.</p>
+      <p>
+        <a href="https://x.com/">Twitter</a> | <a href="https://www.instagram.com">Instagram</a> | <a href="https://www.facebook.com/">Facebook</a>
+      </p>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div>
+      <h3>Contact Us</h3>
+      <p>Email: support@jumpstart.com</p>
+      <p>Phone: +1 800 555 1234</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - Jumpstart</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      background-color: #fff8f0;
+      color: #333;
+      padding: 0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 10%;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      color: #ff6f3c;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ff6f3c;
+    }
+
+    .chat-btn {
+      background: #ff6f3c;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .chat-btn:hover {
+      background: #ff3b1a;
+    }
+
+    h1.page-title {
+      text-align: center;
+      margin: 40px 0 20px;
+      color: #ff6f3c;
+    }
+
+    ul.menu-list {
+      list-style: none;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      padding: 0;
+    }
+
+    ul.menu-list li {
+      padding: 15px 10px;
+      font-size: 1.2rem;
+      border-bottom: 1px solid #ffdac1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    ul.menu-list li a {
+      text-decoration: none;
+      color: #ff6f3c;
+      font-weight: 600;
+      padding: 6px 12px;
+      border: 1px solid #ff6f3c;
+      border-radius: 25px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    ul.menu-list li a:hover {
+      background: #ff6f3c;
+      color: #fff;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .back-link a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .back-link a:hover {
+      color: #ff6f3c;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #ff6f3c;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .menu-toggle {
+        display: block;
+        order: 2;
+      }
+
+      nav {
+        display: none;
+        width: 100%;
+        order: 3;
+      }
+
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        border-radius: 10px;
+        padding: 10px 0;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+        text-align: center;
+      }
+
+      nav.active {
+        display: block;
+      }
+
+      .chat-btn {
+        order: 4;
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+      }
+    }
+footer {
+      background: #222;
+      color: #bbb;
+      padding: 50px 10%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    footer h3 {
+      color: #ff6f3c;
+      margin-bottom: 15px;
+    }
+
+    footer a {
+      color: #bbb;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: #ff6f3c;
+    }
+
+    @media (max-width: 768px) {
+      .features {
+        flex-direction: column;
+        padding: 40px 5%;
+      }
+      .features div {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      .product-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      footer div {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Jumpstart</h1>
+
+    <button class="menu-toggle">&#9776;</button>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <a href="chat.html" class="chat-btn">AI Chef Chat</a>
+
+  </header>
+
+  <h1 class="page-title">Our Menu</h1>
+
+  <ul class="menu-list">
+    <li>Gourmet Burger <a href="order.html?item=Gourmet+Burger">Order Now</a></li>
+    <li>Vegan Bowl <a href="order.html?item=Vegan+Bowl">Order Now</a></li>
+    <li>Chocolate Dessert <a href="order.html?item=Chocolate+Dessert">Order Now</a></li>
+  </ul>
+
+  <div class="back-link">
+    <a href="index.html">← Back to Home</a>
+  </div>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+
+    menuToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
+
+</body>
+ <footer>
+    <div>
+      <h3>Jumpstart</h3>
+      <p>Bringing delightful flavors and AI-powered taste experiences to your table.</p>
+      <p>
+        <a href="https://x.com/">Twitter</a> | <a href="https://www.instagram.com">Instagram</a> | <a href="https://www.facebook.com/">Facebook</a>
+      </p>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div>
+      <h3>Contact Us</h3>
+      <p>Email: support@jumpstart.com</p>
+      <p>Phone: +1 800 555 1234</p>
+    </div>
+  </footer>
+</html>

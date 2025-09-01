@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jumpstart - Savor Every Bite</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      background-color: #fff8f0;
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 10%;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      color: #ff6f3c;
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ff6f3c;
+    }
+
+    .chat-btn {
+      background: #ff6f3c;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .chat-btn:hover {
+      background: #ff3b1a;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 140px 20px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      margin-bottom: 25px;
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero .btn {
+      background: #ff6f3c;
+      padding: 14px 28px;
+      border-radius: 35px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background 0.3s;
+    }
+
+    .hero .btn:hover {
+      background: #ff3b1a;
+    }
+
+    .features {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      padding: 60px 10%;
+      background: #fff3eb;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .features div {
+      width: 30%;
+      min-width: 250px;
+      background: #fff;
+      padding: 25px 20px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+
+    .features div:hover {
+      transform: translateY(-5px);
+    }
+
+    .features h3 {
+      margin: 15px 0;
+      color: #ff6f3c;
+    }
+
+    .products {
+      text-align: center;
+      padding: 60px 10%;
+    }
+
+    .products h2 {
+      margin-bottom: 40px;
+      color: #ff6f3c;
+    }
+
+    .product-grid {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .product {
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      width: 300px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    }
+
+    .product img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .product h4 {
+      margin: 15px 0 10px;
+      color: #ff6f3c;
+    }
+
+    .product p {
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+      color: #555;
+    }
+
+    .product .btn {
+      display: inline-block;
+      background: #ff6f3c;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .product .btn:hover {
+      background: #ff3b1a;
+    }
+
+    footer {
+      background: #222;
+      color: #bbb;
+      padding: 50px 10%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    footer h3 {
+      color: #ff6f3c;
+      margin-bottom: 15px;
+    }
+
+    footer a {
+      color: #bbb;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 10px;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: #ff6f3c;
+    }
+
+    @media (max-width: 768px) {
+      .features {
+        flex-direction: column;
+        padding: 40px 5%;
+      }
+      .features div {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      .product-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      footer div {
+        width: 100%;
+      }
+    }
+     /* Existing styles remain unchanged */
+
+  @media (max-width: 1024px) {
+    header {
+      padding: 15px 5%;
+    }
+    .hero {
+      padding: 120px 15px;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 90%;
+    }
+    .features {
+      padding: 50px 5%;
+    }
+    .products {
+      padding: 50px 5%;
+    }
+    .product {
+      width: 45%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    nav ul {
+      flex-direction: column;
+      width: 100%;
+    }
+    nav ul li {
+      margin: 5px 0;
+    }
+    .hero h2 {
+      font-size: 2rem;
+    }
+    .hero p {
+      font-size: 1rem;
+    }
+    .product {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero {
+      padding: 100px 10px;
+    }
+    .hero h2 {
+      font-size: 1.7rem;
+    }
+    .hero p {
+      font-size: 0.95rem;
+    }
+    .features div {
+      width: 100%;
+      padding: 20px 15px;
+    }
+  }
+  .menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ff6f3c;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu-toggle {
+    display: block;
+    order: 2; /* put hamburger after logo */
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+    order: 3;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    padding: 10px 0;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  nav.active {
+    display: block;
+  }
+
+  .chat-btn {
+    order: 4;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+  </style>
+</head>
+<body>
+ <header>
+  <h1>Jumpstart</h1>
+
+  <button class="menu-toggle">&#9776;</button> <!-- Hamburger icon -->
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+<a href="chat.html" class="chat-btn">AI Chef Chat</a>
+
+</header>
+
+
+
+  <section class="hero">
+    <h2>Savor Every Bite</h2>
+    <p>Discover curated meals, recipes, and personalized food recommendations from our AI-powered taste assistant.</p>
+    <a href="menu.html" class="btn">Explore Menu</a>
+  </section>
+
+  <section class="features">
+    <div>
+      <h3>🤖 AI Meal Planner</h3>
+      <p>Get personalized recipe suggestions and meal ideas based on your taste and dietary preferences.</p>
+    </div>
+    <div>
+      <h3>🍽️ Curated Menus</h3>
+      <p>Explore hand-picked dishes from top chefs, seasonal specials, and trending meals.</p>
+    </div>
+    <div>
+      <h3>🚚 Fast Delivery</h3>
+      <p>Enjoy fresh meals delivered to your doorstep in record time, keeping taste and quality intact.</p>
+    </div>
+  </section>
+
+  <section class="products">
+    <h2>Chef’s Specials This Week</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="1.jpg" alt="Gourmet Burger">
+        <h4>Gourmet Burger</h4>
+        <p>A juicy, flavor-packed burger with fresh ingredients and signature sauce.</p>
+        <a href="order.html" class="btn">Order Now</a>
+      </div>
+      <div class="product">
+        <img src="2.jpg" alt="Vegan Bowl">
+        <h4>Vegan Bowl</h4>
+        <p>A colorful bowl filled with fresh vegetables, grains, and plant-based protein.</p>
+        <a href="order.html" class="btn">Order Now</a>
+      </div>
+      <div class="product">
+        <img src="3.webp" alt="Chocolate Dessert">
+        <h4>Chocolate Dessert</h4>
+        <p>Indulge in rich, creamy chocolate dessert topped with fresh fruits.</p>
+        <a href="order.html" class="btn">Order Now</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>
+      <h3>Jumpstart</h3>
+      <p>Bringing delightful flavors and AI-powered taste experiences to your table.</p>
+      <p>
+        <a href="https://x.com/">Twitter</a> | <a href="https://www.instagram.com">Instagram</a> | <a href="https://www.facebook.com/">Facebook</a>
+      </p>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div>
+      <h3>Contact Us</h3>
+      <p>Email: support@jumpstart.com</p>
+      <p>Phone: +1 800 555 1234</p>
+    </div>
+  </footer>
+  <script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav');
+
+  menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>
